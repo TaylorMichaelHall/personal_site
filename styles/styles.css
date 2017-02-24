@@ -60,11 +60,17 @@
 
 body {
   background-color: black;
+  margin:0;
 }
 
 #wrap {
   height: auto;
   width: 100%;
-  position:relativ;
+  z-index: -1;
+  position:relative;
   left: 0;
+}
+
+p {
+  color: white;
 }
