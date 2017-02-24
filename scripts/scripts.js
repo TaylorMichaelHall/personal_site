@@ -1,3 +1,4 @@
+/*
 $(document).ready(function(){
   $('.ball').hover(function(){
     $(this).fadeTo('fast', 0.1);
@@ -6,3 +7,5 @@ $(document).ready(function(){
     $(this).fadeTo('fast', 1);
   });
 });
+
+*/
