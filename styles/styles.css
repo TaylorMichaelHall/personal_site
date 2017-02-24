@@ -2,16 +2,6 @@
   text-rendering: optimizeLegibility;
 }
 
-.topBar {
-  height: 48px;
-  width: 100%;
-  left:0;
-  right:0;
-  top: 0;
-  background-color: #333;
-  position: fixed;
-  list-style: none;
-}
 
 #stamp {
   width: auto;
@@ -26,6 +16,17 @@
 
 #stamp, .navul {
   font-family: 'Raleway', sans-serif;
+}
+
+.topBar {
+  height: 48px;
+  width: 100%;
+  left:0;
+  right:0;
+  top: 0;
+  background-color: #333;
+  position: fixed;
+  list-style: none;
 }
 
 .navbar {
@@ -66,6 +67,7 @@ body {
 #wrap {
   height: auto;
   width: 100%;
+  min-width: 100%;
   z-index: -1;
   position:relative;
   left: 0;
