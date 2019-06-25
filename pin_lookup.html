@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        //hide link
+        $('#myLink').hide();
+        //set pinID to form value
+        $("#myForm").on("keyup change", function() {
+          pinLink = this.value;
+        });
+        //set link to api link with pinID
+        $("button").click(function(){
+          //strip pin id from link  I DONT KNOW A GOOD WAY TO DO THIS
+          pinID = pinLink.replace("https://www.pinterest.com/pin/", "");
+       	  pinID = pinID.replace("/", "");
+          $("#myLink").attr("href", "https://api.pinterest.com/v1/pins/" + pinID + "/?access_token=ArmGDMIdtyiBi4TaY3QZnzrNI6aPFas6EXQfsPVF8u-iKeCnsgtvgDAAAYKORfLzrqIAxs8AAAAA&fields=counts,url,created_at,metadata,note");
+          //display link
+          $('#myLink').toggle('show');
+        });
+      });
+    </script>
+    <title>Pin ID Lookup Tool</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Pin ID Lookup Tool</h1>
+        <p>Paste your full Pin URL below</p>
+      </div>
+    </div>
+    <div class="container">
+      <form>
+        <fieldset>
+          <input id="myForm" type="text" value="Paste your link here" />
+        </fieldset>
+      </form>
+      <br>
+      <button class="btn btn-success">Make Link</button>
+      <br><br>
+      <h1>
+        <a style="display: none;" target="blank" href="about:blank" id="myLink">click here</a>
+      </h1>
+    </div>
+  </body>
+</html>
